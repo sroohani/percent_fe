@@ -37,7 +37,35 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: const Center(),
+      body: Center(
+        child: SizedBox(
+          width: 140,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              const TextField(
+                decoration: InputDecoration(
+                  labelText: 'Username',
+                ),
+              ),
+              const TextField(
+                decoration: InputDecoration(
+                  labelText: 'Password',
+                ),
+                obscureText: true,
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              ElevatedButton.icon(
+                onPressed: null,
+                icon: const Icon(Icons.arrow_right_alt),
+                label: const Text("Log in"),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
