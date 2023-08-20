@@ -13,13 +13,20 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey,
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
       body: Center(
-        child: SizedBox(
-          width: 140,
+        child: Container(
+          decoration: BoxDecoration(
+            border: Border.all(),
+            borderRadius: BorderRadius.circular(14),
+          ),
+          width: 300,
+          padding: const EdgeInsets.all(10),
+          height: 300,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -38,9 +45,15 @@ class _LoginPageState extends State<LoginPage> {
                 height: 20,
               ),
               ElevatedButton.icon(
-                onPressed: null,
+                onPressed: () {},
                 icon: const Icon(Icons.arrow_right_alt),
                 label: const Text("Log in"),
+              ),
+              const Divider(),
+              ElevatedButton.icon(
+                onPressed: () {},
+                icon: const Icon(Icons.arrow_upward_sharp),
+                label: const Text("Sign up"),
               ),
             ],
           ),
